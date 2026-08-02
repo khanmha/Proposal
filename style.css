@@ -1,0 +1,1932 @@
+/* ==========================================================
+   LOVE JOURNEY WEBSITE
+   PART 2A - STYLE.CSS
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#020617;
+    color:white;
+    overflow-x:hidden;
+
+    font-family:'Poppins',sans-serif;
+}
+
+h1,h2,h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    padding:80px 8%;
+
+    position:relative;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* =======================================
+BACKGROUND
+======================================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at top,#14213d 0%,transparent 60%),
+
+radial-gradient(circle at bottom,#38184c 0%,transparent 60%),
+
+linear-gradient(180deg,#01030c,#020617);
+
+z-index:-20;
+
+}
+
+/* =======================================
+STARS
+======================================= */
+
+#stars,
+#stars2,
+#stars3{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+}
+
+#stars{
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px);
+
+background-size:40px 40px;
+
+opacity:.4;
+
+animation:moveStars 120s linear infinite;
+
+}
+
+#stars2{
+
+background-image:
+
+radial-gradient(#fff 1.5px,transparent 1.5px);
+
+background-size:80px 80px;
+
+opacity:.3;
+
+animation:moveStars 180s linear infinite reverse;
+
+}
+
+#stars3{
+
+background-image:
+
+radial-gradient(#fff 2px,transparent 2px);
+
+background-size:120px 120px;
+
+opacity:.15;
+
+animation:moveStars 250s linear infinite;
+
+}
+
+@keyframes moveStars{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-1000px);
+
+}
+
+}
+
+/* =======================================
+FLOATING CLOUDS
+======================================= */
+
+.floating-cloud{
+
+position:fixed;
+
+width:340px;
+
+height:110px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:100px;
+
+filter:blur(8px);
+
+z-index:-5;
+
+}
+
+.cloud1{
+
+top:15%;
+left:-350px;
+
+animation:cloudMove 55s linear infinite;
+
+}
+
+.cloud2{
+
+top:45%;
+left:-450px;
+
+animation:cloudMove 70s linear infinite;
+
+}
+
+.cloud3{
+
+top:72%;
+left:-250px;
+
+animation:cloudMove 95s linear infinite;
+
+}
+
+@keyframes cloudMove{
+
+from{
+
+transform:translateX(0);
+
+}
+
+to{
+
+transform:translateX(180vw);
+
+}
+
+}
+
+/* =======================================
+LOADER
+======================================= */
+
+#loader{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:#020617;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:1s;
+
+}
+
+.loader-content{
+
+text-align:center;
+
+}
+
+.loader-content h1{
+
+font-size:48px;
+
+margin-top:30px;
+
+}
+
+.loader-content p{
+
+opacity:.7;
+
+margin-top:12px;
+
+}
+
+.plane-loader{
+
+font-size:70px;
+
+animation:loaderFly 2s infinite;
+
+color:#ffd166;
+
+}
+
+@keyframes loaderFly{
+
+0%{
+
+transform:translateX(-20px);
+
+}
+
+50%{
+
+transform:translateX(20px);
+
+}
+
+100%{
+
+transform:translateX(-20px);
+
+}
+
+}
+
+/* =======================================
+MUSIC BUTTON
+======================================= */
+
+#musicBtn{
+
+position:fixed;
+
+right:30px;
+
+bottom:30px;
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+color:white;
+
+font-size:24px;
+
+z-index:999;
+
+}
+
+#musicBtn:hover{
+
+transform:scale(1.12);
+
+background:#ff4d6d;
+
+}
+
+/* =======================================
+HERO
+======================================= */
+
+#hero{
+
+text-align:center;
+
+}
+
+.hero-content{
+
+max-width:900px;
+
+}
+
+.hero-content h3{
+
+font-size:34px;
+
+color:#ffd166;
+
+margin-bottom:25px;
+
+}
+
+.hero-content h1{
+
+font-size:85px;
+
+line-height:1.1;
+
+margin-bottom:30px;
+
+}
+
+.hero-content p{
+
+font-size:22px;
+
+line-height:1.9;
+
+opacity:.85;
+
+margin-bottom:45px;
+
+}
+
+#beginJourney{
+
+padding:18px 50px;
+
+font-size:18px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#ff4d6d,#ff8fab);
+
+color:white;
+
+box-shadow:0 15px 40px rgba(255,77,109,.35);
+
+}
+
+#beginJourney:hover{
+
+transform:translateY(-6px);
+
+}
+
+/* =======================================
+AIRPORT BOARD
+======================================= */
+
+.airport-board{
+
+background:transparent;
+
+}
+
+.board{
+
+width:900px;
+
+max-width:100%;
+
+background:#111827;
+
+border-radius:25px;
+
+padding:40px;
+
+box-shadow:0 25px 80px rgba(0,0,0,.45);
+
+}
+
+.row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:22px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+font-size:24px;
+
+}
+
+.row:last-child{
+
+border:none;
+
+}
+
+.glow{
+
+color:#ffe066;
+
+animation:glow 2s infinite;
+
+}
+
+.green{
+
+color:#7dff95;
+
+}
+
+@keyframes glow{
+
+0%,100%{
+
+text-shadow:0 0 15px gold;
+
+}
+
+50%{
+
+text-shadow:0 0 35px gold;
+
+}
+
+}
+
+/* =======================================
+BOARDING PASS
+======================================= */
+
+#boardingSection h2{
+
+font-size:64px;
+
+margin-bottom:60px;
+
+}
+
+.boarding-wrapper{
+
+perspective:2000px;
+
+}
+
+.boarding-pass{
+
+width:950px;
+
+max-width:100%;
+
+height:520px;
+
+position:relative;
+
+transform-style:preserve-3d;
+
+transition:1.2s;
+
+cursor:pointer;
+
+}
+
+.boarding-pass.flip{
+
+transform:rotateY(180deg);
+
+}
+
+.front,
+.back{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+backface-visibility:hidden;
+
+border-radius:30px;
+
+overflow:hidden;
+
+}
+
+.front{
+
+background:
+
+linear-gradient(145deg,#ffffff,#f5f5f5);
+
+color:#222;
+
+padding:40px;
+
+}
+
+.back{
+
+background:linear-gradient(135deg,#ff4d6d,#ff8fab);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+padding:50px;
+
+transform:rotateY(180deg);
+
+text-align:center;
+
+}
+
+.ticket-header{
+
+font-size:44px;
+
+font-weight:700;
+
+letter-spacing:4px;
+
+margin-bottom:40px;
+
+}
+
+.ticket-body{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:35px;
+
+}
+
+.ticket-body h5{
+
+font-size:15px;
+
+text-transform:uppercase;
+
+opacity:.5;
+
+margin-bottom:10px;
+
+}
+
+.ticket-body p{
+
+font-size:26px;
+
+font-weight:600;
+
+}
+
+.barcode{
+
+position:absolute;
+
+bottom:35px;
+
+right:35px;
+
+width:260px;
+
+height:70px;
+
+background:
+repeating-linear-gradient(
+90deg,
+#000 0,
+#000 3px,
+transparent 3px,
+transparent 6px
+);
+
+}
+/* ==========================================================
+   PART 2B-1
+   PASSPORT + AIRPLANE + PHOTO + TIMELINE
+========================================================== */
+
+/* =======================================
+AIRPLANE SECTION
+======================================= */
+
+#planeSection{
+    position:relative;
+    overflow:hidden;
+}
+
+#planeSection h2{
+    font-size:64px;
+    margin-bottom:60px;
+}
+
+.flightPath{
+    position:relative;
+    width:1000px;
+    max-width:95%;
+    height:600px;
+}
+
+.flightPath svg{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+#heartPath{
+    fill:none;
+    stroke:#ffffff55;
+    stroke-width:5;
+    stroke-dasharray:12 12;
+    stroke-linecap:round;
+}
+
+#plane{
+    position:absolute;
+    left:0;
+    top:0;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    color:#ffd166;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+/* =======================================
+PASSPORT
+======================================= */
+
+#passportSection h2{
+    font-size:64px;
+    margin-bottom:60px;
+}
+
+.passport-container{
+    perspective:2200px;
+}
+
+.passport{
+
+    width:420px;
+    height:580px;
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    transition:1.2s;
+
+    cursor:pointer;
+
+}
+
+.passport.open{
+
+    transform:rotateY(-180deg);
+
+}
+
+.passport-front,
+.passport-inside{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    backface-visibility:hidden;
+
+}
+
+.passport-front{
+
+    background:
+    linear-gradient(145deg,#4b0016,#78001d);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    border:3px solid rgba(255,215,0,.35);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+
+}
+
+.passport-front h1{
+
+    font-size:52px;
+
+    text-align:center;
+
+    letter-spacing:5px;
+
+    margin-bottom:25px;
+
+}
+
+.passport-front p{
+
+    font-size:18px;
+
+    opacity:.8;
+
+}
+
+.passport-inside{
+
+    transform:rotateY(180deg);
+
+    background:#fdf9ef;
+
+    color:#222;
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.passport-inside h3{
+
+    margin-top:18px;
+
+    color:#8a0018;
+
+    font-size:22px;
+
+}
+
+.passport-inside p{
+
+    margin-top:8px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+#stampBtn{
+
+    margin-top:35px;
+
+    padding:16px;
+
+    border-radius:10px;
+
+    background:#8a0018;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+#stampBtn:hover{
+
+    transform:translateY(-3px);
+
+    background:#b40024;
+
+}
+
+#approvedStamp{
+
+    position:absolute;
+
+    top:230px;
+
+    left:55px;
+
+    width:300px;
+
+    height:110px;
+
+    border:6px solid crimson;
+
+    color:crimson;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+    transform:rotate(-18deg) scale(0);
+
+    opacity:0;
+
+    transition:.6s;
+
+}
+
+#approvedStamp.show{
+
+    transform:rotate(-18deg) scale(1);
+
+    opacity:1;
+
+}
+
+/* =======================================
+PHOTO
+======================================= */
+
+#photoSection{
+
+    text-align:center;
+
+}
+
+#photoSection h2{
+
+    font-size:60px;
+
+    margin-bottom:40px;
+
+}
+
+.photo-frame{
+
+    width:420px;
+
+    height:520px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:4px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.45);
+
+    transition:.5s;
+
+}
+
+.photo-frame:hover{
+
+    transform:scale(1.04);
+
+}
+
+.photo-frame img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+#photoSection p{
+
+    margin-top:35px;
+
+    max-width:760px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    opacity:.85;
+
+}
+
+/* =======================================
+TIMELINE
+======================================= */
+
+#timeline h2{
+
+    font-size:64px;
+
+    margin-bottom:80px;
+
+}
+
+.timeline{
+
+    width:900px;
+
+    max-width:95%;
+
+    position:relative;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:35px;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:
+    linear-gradient(#ff4d6d,#ffd166);
+
+}
+
+.event{
+
+    position:relative;
+
+    margin-left:90px;
+
+    margin-bottom:70px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.4s;
+
+}
+
+.event:hover{
+
+    transform:translateX(12px);
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.event::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-71px;
+
+    top:35px;
+
+    width:24px;
+
+    height:24px;
+
+    border-radius:50%;
+
+    background:#ffd166;
+
+    box-shadow:0 0 25px gold;
+
+}
+
+.event h3{
+
+    font-size:34px;
+
+    color:#ffd166;
+
+    margin-bottom:15px;
+
+}
+
+.event p{
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    opacity:.88;
+
+}
+/* ==========================================================
+   PART 2B-2
+   PROPOSAL + CELEBRATION + RESPONSIVE DESIGN
+========================================================== */
+
+
+/* =======================================
+FINAL PROPOSAL SECTION
+======================================= */
+
+#proposal{
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+
+#proposal h2{
+
+    font-size:55px;
+
+    color:#ffd166;
+
+    margin-bottom:35px;
+
+    animation:pulseText 3s infinite;
+
+}
+
+
+#proposal h1{
+
+    font-size:85px;
+
+    max-width:1000px;
+
+    line-height:1.15;
+
+    margin-bottom:60px;
+
+}
+
+
+#yesBtn{
+
+    padding:22px 70px;
+
+    border-radius:60px;
+
+    font-size:28px;
+
+    color:white;
+
+    background:
+
+    linear-gradient(135deg,#ff0054,#ff8fab);
+
+    box-shadow:
+
+    0 20px 60px rgba(255,0,84,.45);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+#yesBtn::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    background:white;
+
+    border-radius:50%;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:.6s;
+
+}
+
+
+#yesBtn:hover::before{
+
+    width:400px;
+
+    height:400px;
+
+    opacity:.15;
+
+}
+
+
+#yesBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+/* =======================================
+TEXT GLOW
+======================================= */
+
+
+@keyframes pulseText{
+
+    0%,100%{
+
+        text-shadow:
+
+        0 0 10px #ffd166;
+
+    }
+
+
+    50%{
+
+        text-shadow:
+
+        0 0 35px #ffd166;
+
+    }
+
+}
+
+
+
+/* =======================================
+CELEBRATION AREA
+======================================= */
+
+
+#celebration{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+
+.heart{
+
+    position:absolute;
+
+    color:#ff4d6d;
+
+    font-size:30px;
+
+    animation:heartFloat linear forwards;
+
+}
+
+
+@keyframes heartFloat{
+
+
+    from{
+
+        transform:
+
+        translateY(100vh)
+
+        scale(.5)
+
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:
+
+        translateY(-120vh)
+
+        scale(1.5)
+
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+
+}
+
+
+
+/* =======================================
+FIREWORKS
+======================================= */
+
+
+.firework{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    background:#ffd166;
+
+    border-radius:50%;
+
+    animation:explode 1.5s ease-out forwards;
+
+}
+
+
+@keyframes explode{
+
+
+    from{
+
+        transform:scale(0);
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:
+
+        scale(12);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+/* =======================================
+FOOTER
+======================================= */
+
+
+footer{
+
+    min-height:120px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+}
+
+
+footer p{
+
+    font-size:18px;
+
+    opacity:.8;
+
+}
+
+
+
+/* =======================================
+SCROLL REVEAL HELPERS
+======================================= */
+
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+}
+
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:
+
+    1s ease;
+
+}
+
+
+
+/* =======================================
+SELECTION
+======================================= */
+
+
+::selection{
+
+    background:#ff4d6d;
+
+    color:white;
+
+}
+
+
+
+/* =======================================
+CUSTOM SCROLLBAR
+======================================= */
+
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#020617;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:
+
+    linear-gradient(#ff4d6d,#ffd166);
+
+    border-radius:20px;
+
+}
+
+
+
+/* =======================================
+TABLET RESPONSIVE
+======================================= */
+
+
+@media(max-width:900px){
+
+
+    .hero-content h1{
+
+        font-size:60px;
+
+    }
+
+
+    .hero-content h3{
+
+        font-size:28px;
+
+    }
+
+
+    #boardingSection h2,
+    #passportSection h2,
+    #timeline h2,
+    #planeSection h2{
+
+        font-size:48px;
+
+    }
+
+
+    .ticket-body{
+
+        gap:20px;
+
+    }
+
+
+    .ticket-body p{
+
+        font-size:20px;
+
+    }
+
+
+    .boarding-pass{
+
+        height:600px;
+
+    }
+
+
+    .flightPath{
+
+        height:450px;
+
+    }
+
+
+    #proposal h1{
+
+        font-size:60px;
+
+    }
+
+
+}
+
+
+
+/* =======================================
+MOBILE RESPONSIVE
+======================================= */
+
+
+@media(max-width:600px){
+
+
+    section{
+
+        padding:60px 5%;
+
+    }
+
+
+    .hero-content h1{
+
+        font-size:42px;
+
+    }
+
+
+    .hero-content h3{
+
+        font-size:22px;
+
+    }
+
+
+    .hero-content p{
+
+        font-size:17px;
+
+    }
+
+
+    #beginJourney{
+
+        padding:15px 35px;
+
+    }
+
+
+
+    .board{
+
+        padding:25px;
+
+    }
+
+
+    .row{
+
+        font-size:16px;
+
+        flex-direction:column;
+
+        gap:8px;
+
+    }
+
+
+
+    #boardingSection h2,
+    #passportSection h2,
+    #timeline h2,
+    #planeSection h2{
+
+        font-size:40px;
+
+    }
+
+
+
+    .boarding-pass{
+
+        height:650px;
+
+    }
+
+
+    .front{
+
+        padding:25px;
+
+    }
+
+
+    .ticket-header{
+
+        font-size:30px;
+
+    }
+
+
+    .ticket-body{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .barcode{
+
+        width:180px;
+
+    }
+
+
+    .passport{
+
+        width:300px;
+
+        height:430px;
+
+    }
+
+
+    .passport-front h1{
+
+        font-size:38px;
+
+    }
+
+
+    .passport-inside{
+
+        padding:25px;
+
+    }
+
+
+    .passport-inside p{
+
+        font-size:15px;
+
+    }
+
+
+    #approvedStamp{
+
+        width:220px;
+
+        height:80px;
+
+        left:40px;
+
+        top:160px;
+
+        font-size:24px;
+
+    }
+
+
+
+    .photo-frame{
+
+        width:300px;
+
+        height:380px;
+
+    }
+
+
+    .event{
+
+        margin-left:60px;
+
+        padding:20px;
+
+    }
+
+
+    .timeline::before{
+
+        left:20px;
+
+    }
+
+
+    .event::before{
+
+        left:-52px;
+
+        width:18px;
+
+        height:18px;
+
+    }
+
+
+
+    .event h3{
+
+        font-size:27px;
+
+    }
+
+
+    .event p{
+
+        font-size:16px;
+
+    }
+
+
+
+    #proposal h2{
+
+        font-size:34px;
+
+    }
+
+
+    #proposal h1{
+
+        font-size:40px;
+
+    }
+
+
+    #yesBtn{
+
+        font-size:22px;
+
+        padding:18px 50px;
+
+    }
+
+
+
+    #musicBtn{
+
+        width:55px;
+
+        height:55px;
+
+        right:20px;
+
+        bottom:20px;
+
+    }
+
+
+}
+
+.final-message{
+
+position:absolute;
+
+bottom:50px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:90%;
+
+max-width:800px;
+
+background:rgba(255,255,255,.1);
+
+backdrop-filter:blur(20px);
+
+padding:40px;
+
+border-radius:30px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.2);
+
+}
+
+
+.final-message h1{
+
+font-size:45px;
+
+color:#ffd166;
+
+margin-bottom:20px;
+
+}
+
+
+.final-message p{
+
+font-size:20px;
+
+line-height:1.8;
+
+}
+
+
+
+.mouse-glow{
+
+position:absolute;
+
+width:30px;
+
+height:30px;
+
+border-radius:50%;
+
+background:#ff4d6d;
+
+opacity:.3;
+
+pointer-events:none;
+
+animation:glowFade .5s forwards;
+
+}
+
+
+@keyframes glowFade{
+
+from{
+
+transform:scale(1);
+
+opacity:.4;
+
+}
+
+to{
+
+transform:scale(3);
+
+opacity:0;
+
+}
+
+}
+.proposal-buttons{
+
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:30px;
+
+}
+
+.proposal-btn{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:22px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.yes{
+
+    background:linear-gradient(135deg,#ff2d55,#ff7b9c);
+
+}
+
+.maybe{
+
+    background:linear-gradient(135deg,#f6c343,#ffdd80);
+
+    color:#222;
+
+}
+
+.no{
+
+    background:linear-gradient(135deg,#4b6cb7,#182848);
+
+}
+
+.proposal-btn:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+}
